@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <title>Web</title>
+    <%= stylesheet 'main' %>
+    <%= javascript 'turbolinks', 'affix', 'application' %>
+    <%= favicon %>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>Website-Monitor</h1>
+      </header>
+      <div class="nav-wrapper">
+        <nav data-active="<%= local(:current_site) %>">
+          <%= render partial: 'shared/navigation' %>
+        </nav>
+      </div>
+      <article>
+        <section>
+          <%= yield %>
+        </section>
+      </article>
+      <footer>
+        <section>
+          <p>sdfsdf</p>
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>

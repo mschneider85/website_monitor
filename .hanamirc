@@ -1,0 +1,4 @@
+project=website_monitor
+architecture=container
+test=minitest
+template=erb
