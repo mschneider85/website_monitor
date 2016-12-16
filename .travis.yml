@@ -5,4 +5,7 @@ services:
   - postgresql
 before_script:
   - cp .env.test.travis .env.test
-  - psql -c 'create database website_monitor_test;' -U postgres
+script:
+  - 'HANAMI_ENV=test bundle exec hanami db create'
+  - 'HANAMI_ENV=test bundle exec hanami db migrate'
+  - 'bundle exec rake test'
