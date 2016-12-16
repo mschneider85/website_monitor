@@ -4,5 +4,5 @@ rvm:
 services:
   - postgresql
 before_script:
-  - cp config/database.yml.travis config/database.yml
+  - cp .env.test.travis .env.test
   - psql -c 'create database website_monitor_test;' -U postgres
