@@ -17,6 +17,7 @@ module Web::Controllers::Urls
 
         redirect_to routes.urls_path
       else
+        @errors = params.error_messages
         self.status = 422
       end
     end

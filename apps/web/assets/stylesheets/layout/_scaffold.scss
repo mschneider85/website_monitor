@@ -5,16 +5,19 @@ body {
 }
 
 body {
-  background: $primarycolor;
+  background: $primarycolor url('hall.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 #container {
-  background: #f0f0f0;
+  background: $container-color;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 60px 0 rgba(0, 0, 0, 1);
   height: 100%;
   height: auto !important;
   margin: 0 auto;
-  max-width: 1170px;
+  max-width: $max-width;
   min-height: 100%;
   position: relative;
 }
@@ -23,7 +26,6 @@ header {
   padding: 0;
 
   h1 {
-    background-color: #eee;
     border-left: 1px solid #eee;
     border-right: 1px solid #eee;
     font-size: 1em;

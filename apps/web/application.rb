@@ -234,7 +234,7 @@ module Web
         connect-src 'self';
         img-src 'self' https: data:;
         style-src 'self' 'unsafe-inline' https:;
-        font-src 'self';
+        font-src 'self' https:;
         object-src 'none';
         plugin-types application/pdf;
         child-src 'self';
@@ -262,6 +262,7 @@ module Web
       view.prepare do
         include Hanami::Helpers
         include Web::Assets::Helpers
+        include Web::Views::ActionName
       end
     end
 

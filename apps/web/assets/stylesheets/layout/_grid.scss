@@ -1,0 +1,73 @@
+// SECTIONS
+.section {
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
+
+// COLUMN SETUP
+.col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child {
+  margin-left: 0;
+}
+
+// GROUPING
+.group {
+  zoom: 1;
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// GRID OF SIX
+.span-6 {
+  width: 100%;
+}
+
+.span-5 {
+  width: 83.06%;
+}
+
+.span-4 {
+  width: 66.13%;
+}
+
+.span-3 {
+  width: 49.2%;
+}
+
+.span-2 {
+  width: 32.26%;
+}
+
+.span-1 {
+  width: 15.33%;
+}
+
+// GO FULL WIDTH BELOW 480 PIXELS
+@media only screen and (max-width: 480px) {
+  .col {
+    margin: 1% 0 1% 0%;
+  }
+
+  .span-1,
+  .span-2,
+  .span-3,
+  .span-4,
+  .span-5,
+  .span-6 {
+    width: 100%;
+  }
+}

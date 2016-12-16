@@ -1,0 +1,51 @@
+.card {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px #c8d1d3;
+  width: 100%;
+  margin-top: 1em;
+
+  &.card-mini {
+    .card-header,
+    .card-body {
+      padding: 20px 30px;
+    }
+  }
+
+  .card-header {
+    padding: 30px;
+    font-size: 1.1em;
+    font-weight: 400;
+    border-bottom: 1px solid #dfe6e8;
+    border-left: 0px solid transparent;
+    color: #666;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .card-title {
+      flex: 1;
+    }
+
+    .card-action {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      > li > a {
+        color: #dfe6e8;
+      }
+    }
+  }
+
+  .card-body {
+    padding: 30px;
+  }
+}
+
+table.table.card-table {
+  margin-bottom: 0;
+}

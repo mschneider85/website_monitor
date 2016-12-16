@@ -5,16 +5,17 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
     <title>Web</title>
     <%= stylesheet 'main' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/9d62184385.css">
     <%= javascript 'turbolinks', 'affix', 'application' %>
     <%= favicon %>
   </head>
-  <body>
+  <body class="<%= local(:action_name) %>">
     <div id="container">
       <header>
         <h1>Website-Monitor</h1>
       </header>
       <div class="nav-wrapper">
-        <nav data-active="<%= local(:current_site) %>">
+        <nav>
           <%= render partial: 'shared/navigation' %>
         </nav>
       </div>
@@ -25,7 +26,7 @@
       </article>
       <footer>
         <section>
-          <p>sdfsdf</p>
+          <p>(c) 2016 Martin Schneider</p>
         </section>
       </footer>
     </div>

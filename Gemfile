@@ -13,6 +13,7 @@ group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading
   gem 'shotgun'
+  gem 'byebug', '~> 9.0', '>= 9.0.5'
 end
 
 group :test, :development do
@@ -25,6 +26,7 @@ group :test do
   gem 'minitest-reporters', '~> 1.1', '>= 1.1.13'
   gem 'guard-minitest', '~> 2.4', '>= 2.4.6'
   gem 'capybara'
+  gem 'simplecov', require: false
 end
 
 group :production do

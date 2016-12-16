@@ -1,14 +1,41 @@
-<h2>All urls</h2>
-
-<% if urls.any? %>
-  <div id="urls">
-    <% urls.each do |url| %>
-      <div class="url">
-        <h2><%= url.title %></h2>
-        <p><%= url.address %></p>
-      </div>
-    <% end %>
+<%= new_url_link %>
+<div id="urls">
+  <div class="card card-mini">
+    <div class="card-header">
+      <div class="card-title">Tracked Websites</div>
+      <ul class="card-action">
+        <li>
+          <a href="/">
+            <i class="fa fa-refresh"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body no-padding">
+      <table class="table card-table table-vertical-center">
+        <thead>
+          <tr>
+            <th>Server</th>
+            <th>Response Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if urls.any? %>
+            <% urls.each do |url| %>
+              <tr class="url" data-id=<%= url.id %>>
+                <td><p><strong><%= url.title %></strong></p><p><small><%= url.address %></small></p></td>
+                <td><p>-</p></td>
+                <td><p><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></p></td>
+              </tr>
+            <% end %>
+          <% else %>
+            <tr>
+              <td collspan="3"><p class="placeholder">There are no urls yet.</p></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-<% else %>
-  <p class="placeholder">There are no urls yet.</p>
-<% end %>
+</div>

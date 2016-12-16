@@ -5,7 +5,7 @@ class NewUrlParams < Hanami::Action::Params
   params do
     required(:url).schema do
       required(:title).filled(:str?)
-      required(:address).filled(:str?)
+      required(:address).filled(:str?, format?: URI.regexp(%w(http https)))
     end
   end
 end

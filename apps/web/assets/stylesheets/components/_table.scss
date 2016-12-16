@@ -1,0 +1,66 @@
+table.table.card-table {
+    margin-bottom: 0;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+table {
+    background-color: transparent;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.card-mini table.table.card-table > tbody > tr th, .card-mini table.table.card-table > thead > tr th {
+    padding: 15px 30px;
+}
+.table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+}
+table.table.card-table > thead > tr > th {
+    margin-left: 1px;
+    font-size: 0.9em;
+    background-color: #f0f4f5;
+    border-bottom-color: #dfe6e8;
+    color: #999;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-bottom-width: 1px;
+}
+table.table > tbody > tr td, table.table > tbody > tr th, table.table > thead > tr td, table.table > thead > tr th {
+    font-size: 14px;
+    padding: 15px 30px;
+}
+.table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+th {
+    text-align: left;
+}
+td, th {
+    padding: 0;
+}
+
+.card-mini table.table.card-table > tbody > tr td, .card-mini table.table.card-table > thead > tr td {
+    padding: 15px 30px;
+}
+table.table.card-table > tbody > tr > td {
+    border-top-color: #f0f4f5;
+    color: #666;
+}
+
+.table-vertical-center {
+  thead tr th, tbody tr td {
+    vertical-align: middle;
+  }
+}

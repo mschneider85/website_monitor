@@ -1,5 +1,37 @@
-<h2>Add url</h2>
+<div class="card card-mini">
+  <div class="card-header">
+    <div class="card-title">
+      Add url
+    </div>
+  </div>
+  <div class="card-body">
+    <%=
+      form_for :url, routes.urls_path, class: 'errors' do
+        div class: 'section group' do
+          div class: 'col span-2' do
+            div class: "form-group #{'has-error' if !params.valid? && params.errors[:url][:title]}" do
+              label      :title
+              text_field :title, required: true, autofocus: true
+            end
+          end
 
+          div class: 'col span-2' do
+            div class: "form-group #{'has-error' if !params.valid? && params.errors[:url][:address]}" do
+              label      :address
+              text_field :address, required: true
+            end
+          end
+
+          div class: 'col span-2' do
+            button type: :submit do
+              span 'Create Url'
+            end
+          end
+        end
+      end
+    %>
+  </div>
+</div>
 <% unless params.valid? %>
   <div class="errors">
     <h3>There was a problem with your submission</h3>
@@ -10,21 +42,3 @@
     </ul>
   </div>
 <% end %>
-
-<%=
-  form_for :url, routes.urls_path do
-    div class: 'input' do
-      label      :title
-      text_field :title
-    end
-
-    div class: 'input' do
-      label      :address
-      text_field :address
-    end
-
-    div class: 'controls' do
-      submit 'Create Url'
-    end
-  end
-%>
