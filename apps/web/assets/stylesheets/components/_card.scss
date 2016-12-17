@@ -12,11 +12,11 @@
     }
   }
 
-  .card-header {
+  .card-header,
+  .card-footer {
     padding: 30px;
     font-size: 1.1em;
     font-weight: 400;
-    border-bottom: 1px solid #dfe6e8;
     border-left: 0px solid transparent;
     color: #666;
     position: relative;
@@ -25,7 +25,15 @@
     flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: flex-start;
+  }
 
+  .card-footer {
+    border-top: 1px solid #dfe6e8;
+    background: #f0f4f5;
+  }
+
+  .card-header {
+    border-bottom: 1px solid #dfe6e8;
     .card-title {
       flex: 1;
     }

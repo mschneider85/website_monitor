@@ -5,7 +5,7 @@ module Web::Views::Urls
     def new_url_link
       url = routes.new_url_path
 
-      link_to url do
+      link_to url, class: 'btn pull-right' do
         'New URL'
       end
     end

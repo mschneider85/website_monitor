@@ -9,6 +9,9 @@ gem 'pg'
 
 gem 'sass'
 
+gem 'open_uri_redirections', '~> 0.2.1'
+gem 'net-ping'
+
 group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading

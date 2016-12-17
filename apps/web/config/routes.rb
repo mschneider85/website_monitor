@@ -3,5 +3,9 @@
 #
 # Example:
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
-resources :urls, only: [:index, :new, :create]
+resources :urls, only: [:index, :new, :create] do
+  member do
+    get 'get_status'
+  end
+end
 root to: 'home#index'

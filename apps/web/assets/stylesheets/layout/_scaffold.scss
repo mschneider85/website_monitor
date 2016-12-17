@@ -1,3 +1,7 @@
+html {
+  overflow-y: scroll;
+}
+
 html,
 body {
   height: 100%;
@@ -5,7 +9,7 @@ body {
 }
 
 body {
-  background: $primarycolor url('hall.jpg');
+  background: $primarycolor url('283h.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -26,8 +30,6 @@ header {
   padding: 0;
 
   h1 {
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
     font-size: 1em;
     margin: 0;
     padding: 1em;

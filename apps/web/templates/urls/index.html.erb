@@ -1,11 +1,10 @@
-<%= new_url_link %>
-<div id="urls">
+<div id="urls" data-turbolinks-permanent>
   <div class="card card-mini">
     <div class="card-header">
       <div class="card-title">Tracked Websites</div>
       <ul class="card-action">
         <li>
-          <a href="/">
+          <a href="/urls">
             <i class="fa fa-refresh"></i>
           </a>
         </li>
@@ -25,8 +24,8 @@
             <% urls.each do |url| %>
               <tr class="url" data-id=<%= url.id %>>
                 <td><p><strong><%= url.title %></strong></p><p><small><%= url.address %></small></p></td>
-                <td><p>-</p></td>
-                <td><p><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></p></td>
+                <td><span class="response-time">-</span></td>
+                <td><p><span class="status badge badge-warning badge-icon"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Pending</span></span></p></td>
               </tr>
             <% end %>
           <% else %>
@@ -36,6 +35,11 @@
           <% end %>
         </tbody>
       </table>
+    </div>
+    <div class="card-footer">
+      <div class="btn-toolbar">
+        <%= new_url_link %>
+      </div>
     </div>
   </div>
 </div>
