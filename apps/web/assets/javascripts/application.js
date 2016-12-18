@@ -21,7 +21,7 @@ bindDeleteHandler = function() {
         text: that.getAttribute('data-confirm'),
         type: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#dd6b55",
+        confirmButtonColor: "#e74c3c",
         confirmButtonText: "Yes, remove it!",
         closeOnConfirm: false
       },

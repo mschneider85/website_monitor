@@ -11,14 +11,14 @@
           div class: 'col span-2' do
             div class: "form-group #{'has-error' if !params.valid? && params.errors[:url][:title]}" do
               label      :title
-              text_field :title, required: true, autofocus: true
+              text_field :title, autofocus: true
             end
           end
 
           div class: 'col span-2' do
             div class: "form-group #{'has-error' if !params.valid? && params.errors[:url][:address]}" do
               label      :address
-              text_field :address, required: true
+              text_field :address
             end
           end
 
@@ -32,12 +32,15 @@
     %>
   </div>
 </div>
-<% unless params.valid? %>
+<% unless params.valid? && local(:additional_messages).none? %>
   <div class="errors">
     <h3>There was a problem with your submission</h3>
     <ul>
       <% params.error_messages.each do |message| %>
         <li><%= message %></li>
+      <% end %>
+      <% if local(:additional_messages).any? %>
+        <li><%= local(:additional_messages)[0] %></li>
       <% end %>
     </ul>
   </div>

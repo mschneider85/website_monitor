@@ -3,6 +3,7 @@ module Web::Controllers::Urls
     include Web::Action
 
     expose :url
+    expose :additional_messages
 
     params do
       required(:url).schema do
@@ -12,14 +13,17 @@ module Web::Controllers::Urls
     end
 
     def call(params)
+      @additional_messages = []
+
       if params.valid?
         @url = UrlRepository.new.create(params[:url])
-
         redirect_to routes.urls_path
       else
-        @errors = params.error_messages
         self.status = 422
       end
+    rescue Hanami::Model::UniqueConstraintViolationError
+      @additional_messages << 'Address already exists'
+      self.status = 422
     end
   end
 end
