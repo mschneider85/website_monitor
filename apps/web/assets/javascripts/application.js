@@ -22,7 +22,7 @@ bindDeleteHandler = function() {
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#dd6b55",
-        confirmButtonText: "Yes, delete it!",
+        confirmButtonText: "Yes, remove it!",
         closeOnConfirm: false
       },
       function(){

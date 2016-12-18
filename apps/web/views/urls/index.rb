@@ -11,10 +11,10 @@ module Web::Views::Urls
     end
 
     def link_to_remove(string)
-      confirmation_message = "Do you really want to remove " + string + "?"
-      success_message = string + " has been deleted."
+      confirmation_message = 'Do you really want to remove ' + string + '?'
+      success_message = string + ' has been deleted.'
 
-      link_to '#', method: :delete, class: 'remove', 'data-confirm': confirmation_message, 'data-success': success_message do
+      link_to '#', method: :delete, class: 'remove', 'data-confirm' => confirmation_message, 'data-success' => success_message do
         i class: 'fa fa-times'
       end
     end
