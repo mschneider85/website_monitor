@@ -17,6 +17,7 @@
             <th>Server</th>
             <th>Response Time</th>
             <th>Status</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
                 <td><p><strong><%= url.title %></strong></p><p><small><%= url.address %></small></p></td>
                 <td><span class="response-time">-</span></td>
                 <td><p><span class="status badge badge-warning badge-icon"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Pending</span></span></p></td>
+                <td><%= link_to_remove(url.title)%></td>
               </tr>
             <% end %>
           <% else %>

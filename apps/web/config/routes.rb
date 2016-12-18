@@ -3,7 +3,7 @@
 #
 # Example:
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
-resources :urls, only: [:index, :new, :create] do
+resources :urls, only: [:index, :new, :create, :destroy] do
   member do
     get 'get_status'
   end

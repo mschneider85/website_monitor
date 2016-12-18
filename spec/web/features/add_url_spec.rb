@@ -1,7 +1,6 @@
 require 'features_helper'
-describe 'Urls' do
-  # Spec written sooner removed from brevity
 
+describe 'Urls' do
   it 'displays list of errors when params contains errors' do
     visit '/urls/new'
 

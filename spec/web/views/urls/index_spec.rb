@@ -18,8 +18,8 @@ describe Web::Views::Urls::Index do
   end
 
   describe 'when there are urls' do
-    let(:url1)     { Url.new(title: 'google.de', address: 'http://www.google.de') }
-    let(:url2)     { Url.new(title: 'web.de', address: 'http://www.web.de') }
+    let(:url1)     { Url.new(id: 1, title: 'google.de', address: 'http://www.google.de') }
+    let(:url2)     { Url.new(id: 2, ttitle: 'web.de', address: 'http://www.web.de') }
     let(:exposures) { Hash[urls: [url1, url2]] }
 
     it 'lists them all' do

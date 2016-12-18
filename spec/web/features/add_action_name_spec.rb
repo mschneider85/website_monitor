@@ -5,4 +5,9 @@ describe 'action_name' do
     visit '/'
     assert page.has_css?('body.web.views.home.index')
   end
+
+  it 'changes after navigating' do
+    visit '/urls'
+    assert page.has_css?('body.web.views.urls.index')
+  end
 end
