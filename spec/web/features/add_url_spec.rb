@@ -19,8 +19,8 @@ describe 'Urls' do
     visit '/urls/new'
 
     within 'form#url-form' do
-      fill_in('Title', with: 'Google')
-      fill_in('Address', with: 'http://www.google.de')
+      fill_in('Title', with: 'Test')
+      fill_in('Address', with: 'https://www.google.de')
       click_button 'Create'
     end
 

@@ -11,14 +11,14 @@
           div class: 'col span-2' do
             div class: "form-group #{'has-error' if !params.valid? && params.errors[:url][:title]}" do
               label      :title
-              text_field :title, autofocus: true
+              text_field :title, required: true, autofocus: true
             end
           end
 
           div class: 'col span-2' do
             div class: "form-group #{'has-error' if !params.valid? && params.errors[:url][:address]}" do
               label      :address
-              text_field :address
+              text_field :address, required: true
             end
           end
 
