@@ -44,11 +44,9 @@ nav {
 }
 
 body {
-  &.home #menu-home {
-    background-color: $secondarycolor;
-  }
-
-  &.urls #menu-urls {
+  &.home #menu-home,
+  &.urls #menu-urls,
+  &.sitenotice #menu-sitenotice {
     background-color: $secondarycolor;
   }
 }

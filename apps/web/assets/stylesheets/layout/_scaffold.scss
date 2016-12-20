@@ -15,6 +15,26 @@ body {
   background-size: cover;
 }
 
+h1 {
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+
+p:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+.vcard {
+  margin: 1em 0 2em;
+}
+
 #container {
   background: $container-color;
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 60px 0 rgba(0, 0, 0, 1);

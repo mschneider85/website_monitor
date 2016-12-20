@@ -8,4 +8,5 @@ resources :urls, only: [:index, :new, :create, :destroy] do
     get 'get_status'
   end
 end
+resources :site_notice, only: :index
 root to: 'home#index'
