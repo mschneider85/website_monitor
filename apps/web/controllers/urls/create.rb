@@ -26,6 +26,10 @@ module Web::Controllers::Urls
       else
         self.status = 422
       end
+
+    rescue Hanami::Model::UniqueConstraintViolationError
+      @additional_messages << 'Address already exists'
+      self.status = 422
     end
 
     private
