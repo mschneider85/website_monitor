@@ -3,6 +3,7 @@
 #
 # Example:
 # get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
+get '/robots.:format', to: 'robots#index'
 resources :urls, only: [:index, :new, :create, :destroy] do
   member do
     get 'get_status'
