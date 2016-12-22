@@ -36,3 +36,13 @@
     margin-top: 26px;
   }
 }
+
+@media only screen and (max-width: 760px) {
+  .btn-toolbar {
+    text-align: center;
+
+    a {
+      float: none;
+    }
+  }
+}
