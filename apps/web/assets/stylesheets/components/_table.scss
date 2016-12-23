@@ -34,7 +34,7 @@ td {
   color: #666;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: $break-small) {
   table,
   thead,
   tbody,
