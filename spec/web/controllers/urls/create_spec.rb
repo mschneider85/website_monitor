@@ -9,7 +9,7 @@ describe Web::Controllers::Urls::Create do
   end
 
   describe 'with valid params' do
-    let(:params) { Hash[url: { title: 'google.de', address: 'http://www.google.de' }] }
+    let(:params) { Hash[url: { title: 'FAZ', address: 'http://www.faz.net' }] }
 
     it 'creates a new url' do
       action.call(params)

@@ -13,7 +13,7 @@ describe UrlRepository do
 
   describe 'find_by' do
     it 'returns nil when called with wrong arguments' do
-      assert_equal nil, @repository.find_by('this_is_a_test')
+      assert_nil @repository.find_by('this_is_a_test')
     end
 
     it 'returns record when called with valid argument' do
