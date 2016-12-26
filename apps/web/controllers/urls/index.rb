@@ -5,7 +5,7 @@ module Web::Controllers::Urls
     expose :urls
 
     def call(params)
-      @urls = UrlRepository.new.all
+      @urls = UrlRepository.new.for_token(current_token)
     end
   end
 end

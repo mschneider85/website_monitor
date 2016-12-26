@@ -2,13 +2,14 @@ require 'spec_helper'
 require_relative '../../../../apps/web/controllers/urls/get_status'
 
 describe Web::Controllers::Urls::Index do
+  token = SecureRandom.uuid
   let(:action) { Web::Controllers::Urls::GetStatus.new }
   let(:repository) { UrlRepository.new }
 
   before do
     repository.clear
-    repository.create(id: 1, title: 'google.de', address: 'http://www.google.de')
-    repository.create(id: 2, title: 'google.de', address: 'http://www.loremipsumdolorsitamet.de')
+    repository.create(id: 1, title: 'google.de', address: 'http://www.google.de', token: token)
+    repository.create(id: 2, title: 'google.de', address: 'http://www.loremipsumdolorsitamet.de', token: token)
   end
 
   describe 'with valid param and valid address' do

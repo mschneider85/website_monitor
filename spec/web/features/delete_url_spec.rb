@@ -1,19 +1,17 @@
 require 'features_helper'
 
 describe 'Delete urls' do
-  let(:repository) { UrlRepository.new }
-
-  before do
-    repository.clear
-
-    repository.create(id: 1, title: 'web.de', address: 'http://www.web.de')
-    repository.create(id: 2, title: 'google.de', address: 'http://www.google.de')
-  end
-
   it 'deletes url' do
+    visit '/urls/new'
+    within('#url-form') do
+      fill_in 'Title', with: 'google.de'
+      fill_in 'Address', with: 'http://www.google.de'
+      find(:css, 'button[type="submit"]').click
+    end
+
     visit '/urls'
 
-    find(:css, '.url[data-id="1"] .remove').click
+    first(:css, '.url[data-id] .remove').click
 
     current_path.must_equal('/urls')
 

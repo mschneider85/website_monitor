@@ -1,8 +1,13 @@
 class UrlRepository < Hanami::Repository
-  def find_by_address(string)
+  def find_by(arg, *args)
+    urls.where(arg, *args).limit(1).first
+  rescue Sequel::DatabaseError
+    nil
+  end
+
+  def for_token(token)
     urls
-      .where(address: string)
-      .limit(1)
-      .first
+      .where(token: token)
+      .to_a
   end
 end

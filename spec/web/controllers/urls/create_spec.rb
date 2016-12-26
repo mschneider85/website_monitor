@@ -56,4 +56,14 @@ describe Web::Controllers::Urls::Create do
       action.params.errors[:url][:address].must_equal ['is in invalid format']
     end
   end
+
+  describe 'existing address' do
+    let(:params) { Hash[url: { title: 'Google', address: 'http://www.google.de' }] }
+
+    it 're-renders the urls#new view' do
+      action.call(params)
+      response = action.call(params)
+      response[0].must_equal 422
+    end
+  end
 end

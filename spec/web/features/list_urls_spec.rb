@@ -1,12 +1,20 @@
 require 'features_helper'
 
 describe 'List urls' do
-  let(:repository) { UrlRepository.new }
   before do
-    repository.clear
+    visit '/urls/new'
+    within('#url-form') do
+      fill_in 'Title', with: 'google.de'
+      fill_in 'Address', with: 'http://www.google.de'
+      find(:css, 'button[type="submit"]').click
+    end
 
-    repository.create(title: 'web.de', address: 'http://www.web.de')
-    repository.create(title: 'google.de', address: 'http://www.google.de')
+    visit '/urls/new'
+    within('#url-form') do
+      fill_in 'Title', with: 'web.de'
+      fill_in 'Address', with: 'http://www.web.de'
+      find(:css, 'button[type="submit"]').click
+    end
   end
 
   it 'displays each url on the page' do

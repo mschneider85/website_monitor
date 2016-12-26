@@ -13,10 +13,11 @@ module Web::Controllers::Urls
     end
 
     def call(params)
+      params[:url][:token] = current_token
       @additional_messages = []
 
       if params.valid?
-        @url = repository.find_by_address(params[:url][:address])
+        @url = repository.find_by(address: params[:url][:address], token: current_token)
         unless @url.nil?
           @additional_messages << 'Address already exists'
           return self.status = 422
