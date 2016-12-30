@@ -10,4 +10,9 @@ resources :urls, only: [:index, :new, :create, :destroy] do
   end
 end
 resources :site_notice, only: :index
+resource :home, only: [] do
+  collection do
+    post 'authenticate'
+  end
+end
 root to: 'home#index'

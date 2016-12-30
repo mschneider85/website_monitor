@@ -23,6 +23,18 @@
   color: #eee;
   background-color: #333;
 
+  &.btn-light {
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+    color: #333;
+
+    &:hover {
+      background-color: #fff;
+      border-color: #333;
+      color: #333;
+    }
+  }
+
   &:hover {
     color: #eee;
     background-color: #111;

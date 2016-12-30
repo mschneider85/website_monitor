@@ -7,7 +7,6 @@ document.addEventListener("turbolinks:load", function() {
   // check for home
   if (document.getElementsByClassName('web views home').length) {
     input = document.getElementById('uuid-input')
-
     inputMask(input, {
       mask: 'hhhhhhhh-hhhh-hhhh-hhhh-hhhhhhhhhhhh',
       placeholder: input.getAttribute('placeholder'),
@@ -15,8 +14,38 @@ document.addEventListener("turbolinks:load", function() {
       clearOnNoChange: true,
       selectOnFocus: true
     });
+
+    document.getElementById('submit-uuid').addEventListener('click', function() {
+      submitUuid();
+    }, false);
+
+    document.getElementById('uuid-input').addEventListener('keydown', function (event) {
+      if (event.which == 13) {
+        event.preventDefault();
+        submitUuid();
+      }
+    });
   }
 });
+
+var submitUuid;
+submitUuid = function() {
+  var input = document.getElementById('uuid-input')
+  var params = 'token=' + input.value;
+  var request = new XMLHttpRequest();
+  request.open('POST', '/home/authenticate', true);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+      location.reload();
+    } else {
+      input.value = '';
+    }
+  };
+  if (input.value.length) {
+    request.send(params);
+  }
+}
 
 
 var bindDeleteHandler;
