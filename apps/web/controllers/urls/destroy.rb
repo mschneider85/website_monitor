@@ -10,5 +10,11 @@ module Web::Controllers::Urls
       repository.delete(@url.id)
       self.status = 200
     end
+
+    private
+
+    def verify_csrf_token?
+      false
+    end
   end
 end

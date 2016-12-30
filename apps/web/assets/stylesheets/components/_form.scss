@@ -1,43 +1,47 @@
-form {
-  input,
-  textarea,
-  select,
-  fieldset {
-    margin-bottom: 1.5rem;
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+input {
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  height: 38px;
+  padding: 6px 10px;
+  width: 100%;
+
+  &:focus {
+    border: 1px solid #333;
+    outline: 0;
   }
 
-  button,
-  input,
-  optgroup,
-  select,
-  textarea {
-    color: inherit;
-    font: inherit;
-    margin: 0;
+  &[data-mask] {
+    font-size: .8em;
+    text-align: center;
+    width: 22em;
   }
+}
 
-  input {
-    background-color: #fff;
-    border: 1px solid #d1d1d1;
-    border-radius: 4px;
-    box-shadow: none;
-    box-sizing: border-box;
-    height: 38px;
-    padding: 6px 10px;
-    width: 100%;
+label {
+  display: block;
+  margin-bottom: .5rem;
+}
 
-    &:focus {
-      border: 1px solid #333;
-      outline: 0;
-    }
-  }
-
-  label {
-    display: block;
-    margin-bottom: .5rem;
-  }
-
-  .has-error input {
-    border: 1px solid $error-color;
-  }
+.has-error input {
+  border: 1px solid $error-color;
 }

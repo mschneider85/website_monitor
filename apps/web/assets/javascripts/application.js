@@ -1,9 +1,20 @@
 document.addEventListener("turbolinks:load", function() {
   // check for url#index
-  var element =  document.getElementById('urls');
-  if (typeof(element) != 'undefined' && element != null) {
+  if (document.getElementsByClassName('web views urls index').length) {
     bindDeleteHandler();
     updateStatus();
+  }
+  // check for home
+  if (document.getElementsByClassName('web views home').length) {
+    input = document.getElementById('uuid-input')
+
+    inputMask(input, {
+      mask: 'hhhhhhhh-hhhh-hhhh-hhhh-hhhhhhhhhhhh',
+      placeholder: input.getAttribute('placeholder'),
+      clearOnFail: true,
+      clearOnNoChange: true,
+      selectOnFocus: true
+    });
   }
 });
 
@@ -36,13 +47,19 @@ bindDeleteHandler = function() {
 
 var removeUrl;
 removeUrl = function(e) {
+  token = e.target.closest('a').dataset.csrf
   tr = e.target.closest('tr')
+  has_siblings = tr.parentNode.children.length > 1
   id = tr.dataset.id
   var request = new XMLHttpRequest();
   request.open('DELETE', '/urls/' + id, true);
   request.onload = function() {
     if (request.status == 200) {
-      tr.outerHTML = ''
+      if (has_siblings) {
+        tr.outerHTML = ''
+      } else {
+        tr.innerHTML = '<td colspan="3"><p class="placeholder">There are no urls yet.</p></td>'
+      }
     }
   }
   request.send();
