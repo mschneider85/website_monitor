@@ -11,6 +11,7 @@ gem 'sass'
 
 gem 'open_uri_redirections', '~> 0.2.1'
 gem 'net-ping'
+gem 'puma'
 
 group :development do
   # Code reloading
@@ -32,8 +33,4 @@ group :test do
   gem 'simplecov', require: false
 end
 
-group :production do
-  gem 'puma'
-end
-
-ruby '2.3.2'
+ruby '2.3.3'
