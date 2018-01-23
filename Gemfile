@@ -11,7 +11,7 @@ gem 'sass'
 
 gem 'open_uri_redirections', '~> 0.2.1'
 gem 'net-ping'
-gem 'puma'
+gem 'puma', '3.11.2'
 
 group :development do
   # Code reloading
